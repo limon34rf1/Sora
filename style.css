@@ -4,19 +4,16 @@ body {
     color: white;
     padding: 20px;
 }
-
 .container {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
-
 input, button {
     padding: 10px;
     margin: 10px;
     width: 300px;
 }
-
 #image-container img {
     max-width: 100%;
     margin-top: 20px;
