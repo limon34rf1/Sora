@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sora Image Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sora Image Generator</h1>
+        <input type="text" id="prompt-input" placeholder="Describe your image...">
+        <button id="generate-btn">Generate</button>
+        <div id="result"></div>
+        <div id="image-container"></div>
+    </div>
+    <script>
+        document.getElementById('generate-btn').addEventListener('click', async () => {
+            const prompt = document.getElementById('prompt-input').value;
+            const response = await fetch('/api', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ prompt })
+            });
+            const data = await response.json();
+            if (data.image_urls) {
+                document.getElementById('image-container').innerHTML = 
+                    `<img src="${data.image_urls[0]}" alt="Generated image">`;
+            }
+        });
+    </script>
+</body>
+</html>
