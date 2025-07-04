@@ -4,8 +4,8 @@ import requests
 import google.generativeai as genai
 from http import HTTPStatus
 
-GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
-SORA_API_KEY = os.environ.get('SORA_API_KEY')
+GEMINI_API_KEY = 'AIzaSyBjCMFPAv1QX5ewcb0m08Pjh4Mdn6MV9i8'
+SORA_API_KEY = 'sk-bCREbtCgwOgFPHxdFd4c7a9910A140438507D1C51401827c'
 
 def handler(request):
     try:
