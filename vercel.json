@@ -2,18 +2,23 @@
   "version": 2,
   "builds": [
     {
-      "src": "api.py",
+      "src": "generate.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/api",
-      "dest": "api.py"
+      "src": "/api/generate",
+      "dest": "generate.py",
+      "methods": ["POST"]
+    },
+    {
+      "src": "/style.css",
+      "dest": "style.css"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "index.html"
     }
   ]
 }
